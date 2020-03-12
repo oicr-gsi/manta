@@ -13,7 +13,7 @@
   },
   "tests": [
     {
-      "id": "Only Tumor",
+      "id": "tumor",
       "parameters": {
         "wdl_inputs": {
           "manta.tumorBam": "/.mounts/labs/gsi/testdata/manta/input_data/SWID_278681_PCSI_0098_Pa_P_PE_700_WG_120905_h803_0093_AC12P2ACXX_NoIndex_L002_R1_001.chr22.bam",
@@ -22,7 +22,7 @@
       }
       },
       {
-      "id": "Tumor and Normal",
+      "id": "tumor-and-normal",
       "parameters": {
         "wdl_inputs": {
           "manta.tumorBam": "/.mounts/labs/gsi/testdata/manta/input_data/PCSI_0090_Pa_P_PE_501_WG_526_170203_D00343_0160_ACACFLANXX_CCGTCC_L008_001.annotated.chr22.bam",
