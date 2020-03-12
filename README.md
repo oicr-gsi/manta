@@ -1,6 +1,6 @@
 # manta
 
-Medips
+A workflow to run the Manta Structural Variant Caller
 
 ## Overview
 
@@ -28,15 +28,14 @@ Parameter|Value|Description
 #### Optional workflow parameters:
 Parameter|Value|Default|Description
 ---|---|---|---
-`normalBam`|Array[String]?|None|
-`normalBai`|Array[File]?|None|
-`tumorBam`|File?|None|
-`tumorBai`|File?|None|
-`referenceFasta`|String|"{HG19_ROOT}/hg19_random.fa"|
-`exome`|Boolean?|None|
-`rna`|Boolean?|None|
-`unstrandedRNA`|Boolean?|None|
-`callRegionsFile`|File?|None|
+`normalBam`|Array[String]?|None|Normal Bam files(s)
+`normalBai`|Array[File]?|None|Normal Bam Index File(s)
+`tumorBam`|File?|None|Tumor Bam File
+`tumorBai`|File?|None|Tumor Bam Index File
+`exome`|Boolean?|None|Should Manta look for exomes
+`rna`|Boolean?|None|Is an RNA bam file being used
+`unstrandedRNA`|Boolean?|None|Is the RNA unstranded
+`callRegionsFile`|File?|None|Will there be a callRegions File
 
 
 #### Optional task parameters:
