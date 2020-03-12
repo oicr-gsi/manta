@@ -5,7 +5,6 @@ workflow manta {
       Array[File]? normalBai
       File? tumorBam
       File? tumorBai
-      String referenceFasta = "{HG19_ROOT}/hg19_random.fa"
       Boolean? exome
       Boolean? rna
       Boolean? unstrandedRNA
@@ -27,7 +26,6 @@ workflow manta {
            normalBai = normalBai,
            tumorBam = tumorBam,
            tumorBai = tumorBai,
-           referenceFasta = referenceFasta,
            callRegionsFile = callRegionsFile,
            normalBamCommand = normalBamCommand,
            tumorBamCommand = tumorBamCommand,
@@ -84,7 +82,7 @@ task configManta {
     File? tumorBam
     File? tumorBai
     File? callRegionsFile
-    String referenceFasta
+    String referenceFasta = "$HG19_ROOT/hg19_random.fa"
     String normalBamCommand
     String tumorBamCommand
     String exomeCommand
@@ -113,7 +111,7 @@ task configManta {
       mv results/variants/*.gz.tbi .
     fi 
     if [ "~{bam}" == "false" ]; then
-      configManta.py ~{tumorBamCommand} ~{exomeCommand} ~{rnaCommand} ~{unstrandedRNACommand} --referenceFasta "$~{referenceFasta}" --runDir . ~{callRegionsCommand};
+      configManta.py ~{tumorBamCommand} ~{exomeCommand} ~{rnaCommand} ~{unstrandedRNACommand} --referenceFasta "~{referenceFasta}" --runDir . ~{callRegionsCommand};
       python2.7 runWorkflow.py;
       mv results/variants/*.vcf.gz .;
       mv results/variants/*.gz.tbi .
