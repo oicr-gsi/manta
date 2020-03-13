@@ -65,8 +65,16 @@ workflow manta {
     }
   }
   output {
-    Array[File] outputVcfFiles = configManta.vcfFiles
-    Array[File] outputTbiFiles = configManta.tbiFiles
+    File? outputVcfCandidateSV = configManta.vcfCandidateSV
+    File? ouputTbiCandidateSV = configManta.tbiCandidateSV
+    File? outputVcfCandidateSmallIndels = configManta.vcfCandidateSmallIndels
+    File? outputTbiCandidateSmallIndels = configManta.tbiCandidateSmallIndels
+    File? outputVcfTumorSV = configManta.vcfTumorSV
+    File? outputTbiTumorSV = configManta.tbiTumorSV
+    File? outputVcfDiploidSV = configManta.vcfDiploidSV
+    File? outputTbiDiploidSV = configManta.tbiDiploidSV
+    File? outputVcfSomaticSV = configManta.vcfSomaticSV
+    File? outputTbiSomaticSV = configManta.tbiSomaticSV
     File outputAlignmentStatsSummary = configManta.alignmentStatsSummary
     File outputSvCandidateGenerationStatsTSV = configManta.svCandidateGenerationStatsTSV
     File outputSvCandidateGenerationStatsXML = configManta.svCandidateGenerationStatsXML
@@ -125,8 +133,16 @@ task configManta {
     timeout: "~{timeout}"
   }
   output {
-    Array[File] vcfFiles = glob("*.vcf.gz")
-    Array[File] tbiFiles = glob("*.gz.tbi")
+    File? vcfCandidateSV = "candidateSV.vcf.gz"
+    File? tbiCandidateSV = "candidateSV.vcf.gz.tbi"
+    File? vcfCandidateSmallIndels = "candidateSmallIndels.vcf.gz"
+    File? tbiCandidateSmallIndels = "candidateSmallIndels.vcf.gz.tbi"
+    File? vcfTumorSV = "tumorSV.vcf.gz"
+    File? tbiTumorSV = "tumorSV.vcf.gz.tbi"   
+    File? vcfDiploidSV = "diploidSV.vcf.gz"
+    File? tbiDiploidSV = "diploidSV.vcf.gz.tbi"   
+    File? vcfSomaticSV = "somaticSV.vcf.gz"
+    File? tbiSomaticSV = "somaticSV.vcf.gz.tbi"    
     File alignmentStatsSummary = "./results/stats/alignmentStatsSummary.txt"
     File svCandidateGenerationStatsTSV = "./results/stats/svCandidateGenerationStats.tsv"
     File svCandidateGenerationStatsXML = "./results/stats/svCandidateGenerationStats.xml"
