@@ -105,7 +105,7 @@ task configManta {
   }
   command <<<
     if [ "~{bam}" == "true" ]; then
-      configManta.py --bam ~{sep=" --bam " normalBam} ~{tumorBamCommand} ~{exomeCommand} ~{rnaCommand} ~{unstrandedRNACommand} --referenceFasta "$~{referenceFasta}" --runDir . ~{callRegionsCommand};
+      configManta.py --bam ~{sep=" --bam " normalBam} ~{tumorBamCommand} ~{exomeCommand} ~{rnaCommand} ~{unstrandedRNACommand} --referenceFasta "~{referenceFasta}" --runDir . ~{callRegionsCommand};
       python2.7 runWorkflow.py;
       mv results/variants/*.vcf.gz .;
       mv results/variants/*.gz.tbi .
