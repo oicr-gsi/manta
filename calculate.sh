@@ -7,4 +7,4 @@ set -o pipefail
 cd $1
 
 #find all files, return their md5sums to std out
-find . -name "*.vcf.gz" -exec md5sum {} +
+for i in *.vcf.gz; do   zcat "$i" | grep -v fileDate | md5sum; done
