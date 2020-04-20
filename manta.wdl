@@ -1,7 +1,7 @@
 version 1.0 
 workflow manta {
   input {
-      Array[String]? normalBam
+      Array[File]? normalBam
       Array[File]? normalBai
       File? tumorBam
       File? tumorBai
@@ -84,7 +84,7 @@ workflow manta {
 
 task configManta {
   input {
-    Array[String]? normalBam
+    Array[File]? normalBam
     String bam
     Array[File]? normalBai
     File? tumorBam
