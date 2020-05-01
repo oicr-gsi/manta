@@ -1,8 +1,8 @@
 version 1.0 
 workflow manta {
   input {
-      Array[File]? normalBam
-      Array[File]? normalBai
+      Array[File] normalBam = []
+      Array[File] normalBai = []
       File? tumorBam
       File? tumorBai
       Boolean exome
@@ -97,8 +97,8 @@ workflow manta {
 
 task runManta {
   input {
-    Array[File]? normalBam
-    Array[File]? normalBai
+    Array[File] normalBam
+    Array[File] normalBai
     File? tumorBam
     File? tumorBai
     Boolean exome
@@ -130,8 +130,7 @@ task runManta {
     timeout: "Number of hours before task timeout"
     }
 
-  Array[File] bamCommand = if defined(normalBam) then normalBam else []
-  String bamFlag = if defined(normalBam) then "--bam " else ""
+  String bamFlag = if length(normalBam) > 0 then "--bam " else ""
   String tumorBamCommand = if defined(tumorBam) then "--tumorBam ~{tumorBam}" else ""
   String exomeCommand = if exome then "--exome" else ""
   String rnaCommand = if rna then "--rna" else ""
@@ -140,7 +139,7 @@ task runManta {
 
 
   command <<<
-    configManta.py ~{bamFlag} ~{sep = " --bam " bamCommand} ~{tumorBamCommand} ~{exomeCommand} ~{rnaCommand} ~{unstrandedRNACommand} --referenceFasta "~{referenceFasta}" --runDir . ~{callRegionsCommand};
+    configManta.py ~{bamFlag} ~{sep = " --bam " normalBam} ~{tumorBamCommand} ~{exomeCommand} ~{rnaCommand} ~{unstrandedRNACommand} --referenceFasta "~{referenceFasta}" --runDir . ~{callRegionsCommand};
     python2.7 runWorkflow.py;
   >>>
 

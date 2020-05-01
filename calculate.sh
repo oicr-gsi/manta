@@ -7,4 +7,7 @@ set -o pipefail
 cd $1
 
 #find all files, return their md5sums to std out
-for i in *.vcf.gz; do   zcat "$i" | grep -v fileDate | md5sum; done
+for i in *.vcf.gz; do   zcat "$i" | grep -v '##cmdline' | md5sum; done
+cat alignmentStatsSummary.txt | grep -v group | md5sum
+cat svCandidateGenerationStats.tsv  | grep -vE "(SecsPer|Hours)" | md5sum
+cat svLocusGraphStats.tsv |  grep -vE "(Time|Source)" | md5sum
