@@ -139,6 +139,7 @@ task runManta {
 
 
   command <<<
+    set -euo pipefail
     configManta.py ~{bamFlag} ~{sep = " --bam " normalBam} ~{tumorBamCommand} ~{exomeCommand} ~{rnaCommand} ~{unstrandedRNACommand} --referenceFasta "~{referenceFasta}" --runDir . ~{callRegionsCommand};
     python2.7 runWorkflow.py;
   >>>
