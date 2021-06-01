@@ -3,6 +3,9 @@ set -o nounset
 set -o errexit
 set -o pipefail
 
+# Jenkins seems to have different locale, so file ordering is off. Set it explicitly
+export LC_ALL=en_US.utf8
+
 #enter the workflow's final output directory ($1)
 cd $1
 

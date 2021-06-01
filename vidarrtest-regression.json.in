@@ -1,0 +1,551 @@
+[
+    {
+        "arguments": {
+            "manta.callRegionsFile": null,
+            "manta.exome": false,
+            "manta.normalBai": null,
+            "manta.normalBam": null,
+            "manta.referenceFasta": "$HG19_ROOT/hg19_random.fa",
+            "manta.referenceModule": "hg19/p13",
+            "manta.rna": false,
+            "manta.runManta.jobMemory": null,
+            "manta.runManta.modules": null,
+            "manta.runManta.threads": null,
+            "manta.runManta.timeout": null,
+            "manta.tumorBai": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/SWID_278681_PCSI_0098_Pa_P_PE_700_WG_120905_h803_0093_AC12P2ACXX_NoIndex_L002_R1_001.chr22.bai",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "manta.tumorBam": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/SWID_278681_PCSI_0098_Pa_P_PE_700_WG_120905_h803_0093_AC12P2ACXX_NoIndex_L002_R1_001.chr22.bam",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "manta.unstrandedRNA": false
+        },
+        "description": "Manta workflow test",
+        "engineArguments": {},
+        "id": "tumor",
+        "metadata": {
+            "manta.ouputTbiCandidateSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputAlignmentStatsSummary": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputSvCandidateGenerationStatsTSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputSvCandidateGenerationStatsXML": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputSvLocusGraphStats": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputTbiCandidateSmallIndels": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputTbiDiploidSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputTbiSomaticSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputTbiTumorSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfCandidateSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfCandidateSmallIndels": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfDiploidSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfSomaticSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfTumorSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/./calculate.sh",
+                "metrics_compare": "@CHECKOUT@/./compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/manta/output_metrics/tumor.metrics",
+                "type": "script"
+            }
+        ]
+    },
+    {
+        "arguments": {
+            "manta.callRegionsFile": null,
+            "manta.exome": false,
+            "manta.normalBai": [
+                {
+                    "contents": {
+                        "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/PCSI_0090_Ly_R_PE_598_WG_170201_D00355_0145_ACADTLANXX_GTAGAG_L008_001.annotated.chr22.bai",
+                        "externalIds": [
+                            {
+                                "id": "TEST",
+                                "provider": "TEST"
+                            }
+                        ]
+                    },
+                    "type": "EXTERNAL"
+                }
+            ],
+            "manta.normalBam": [
+                {
+                    "contents": {
+                        "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/PCSI_0090_Ly_R_PE_598_WG_170201_D00355_0145_ACADTLANXX_GTAGAG_L008_001.annotated.chr22.bam",
+                        "externalIds": [
+                            {
+                                "id": "TEST",
+                                "provider": "TEST"
+                            }
+                        ]
+                    },
+                    "type": "EXTERNAL"
+                }
+            ],
+            "manta.referenceFasta": "$HG19_ROOT/hg19_random.fa",
+            "manta.referenceModule": "hg19/p13",
+            "manta.rna": false,
+            "manta.runManta.jobMemory": null,
+            "manta.runManta.modules": null,
+            "manta.runManta.threads": null,
+            "manta.runManta.timeout": null,
+            "manta.tumorBai": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/PCSI_0090_Pa_P_PE_501_WG_526_170203_D00343_0160_ACACFLANXX_CCGTCC_L008_001.annotated.chr22.bai",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "manta.tumorBam": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/PCSI_0090_Pa_P_PE_501_WG_526_170203_D00343_0160_ACACFLANXX_CCGTCC_L008_001.annotated.chr22.bam",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            },
+            "manta.unstrandedRNA": false
+        },
+        "description": "Manta workflow test",
+        "engineArguments": {},
+        "id": "tumor-and-normal",
+        "metadata": {
+            "manta.ouputTbiCandidateSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputAlignmentStatsSummary": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputSvCandidateGenerationStatsTSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputSvCandidateGenerationStatsXML": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputSvLocusGraphStats": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputTbiCandidateSmallIndels": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputTbiDiploidSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputTbiSomaticSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputTbiTumorSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfCandidateSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfCandidateSmallIndels": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfDiploidSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfSomaticSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfTumorSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_tumor-and-normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/./calculate.sh",
+                "metrics_compare": "@CHECKOUT@/./compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/manta/output_metrics/tumor-and-normal.metrics",
+                "type": "script"
+            }
+        ]
+    },
+    {
+        "arguments": {
+            "manta.callRegionsFile": null,
+            "manta.exome": false,
+            "manta.normalBai": [
+                {
+                    "contents": {
+                        "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/SWID_278681_PCSI_0098_Pa_P_PE_700_WG_120905_h803_0093_AC12P2ACXX_NoIndex_L002_R1_001.chr22.bai",
+                        "externalIds": [
+                            {
+                                "id": "TEST",
+                                "provider": "TEST"
+                            }
+                        ]
+                    },
+                    "type": "EXTERNAL"
+                },
+                {
+                    "contents": {
+                        "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/PCSI_0090_Ly_R_PE_598_WG_170201_D00355_0145_ACADTLANXX_GTAGAG_L008_001.annotated.chr22.bai",
+                        "externalIds": [
+                            {
+                                "id": "TEST",
+                                "provider": "TEST"
+                            }
+                        ]
+                    },
+                    "type": "EXTERNAL"
+                }
+            ],
+            "manta.normalBam": [
+                {
+                    "contents": {
+                        "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/SWID_278681_PCSI_0098_Pa_P_PE_700_WG_120905_h803_0093_AC12P2ACXX_NoIndex_L002_R1_001.chr22.bam",
+                        "externalIds": [
+                            {
+                                "id": "TEST",
+                                "provider": "TEST"
+                            }
+                        ]
+                    },
+                    "type": "EXTERNAL"
+                },
+                {
+                    "contents": {
+                        "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/PCSI_0090_Ly_R_PE_598_WG_170201_D00355_0145_ACADTLANXX_GTAGAG_L008_001.annotated.chr22.bam",
+                        "externalIds": [
+                            {
+                                "id": "TEST",
+                                "provider": "TEST"
+                            }
+                        ]
+                    },
+                    "type": "EXTERNAL"
+                }
+            ],
+            "manta.referenceFasta": "$HG19_ROOT/hg19_random.fa",
+            "manta.referenceModule": "hg19/p13",
+            "manta.rna": false,
+            "manta.runManta.jobMemory": null,
+            "manta.runManta.modules": null,
+            "manta.runManta.threads": null,
+            "manta.runManta.timeout": null,
+            "manta.tumorBai": null,
+            "manta.tumorBam": null,
+            "manta.unstrandedRNA": false
+        },
+        "description": "Manta workflow test",
+        "engineArguments": {},
+        "id": "normal",
+        "metadata": {
+            "manta.ouputTbiCandidateSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputAlignmentStatsSummary": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputSvCandidateGenerationStatsTSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputSvCandidateGenerationStatsXML": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputSvLocusGraphStats": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputTbiCandidateSmallIndels": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputTbiDiploidSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputTbiSomaticSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputTbiTumorSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfCandidateSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfCandidateSmallIndels": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfDiploidSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfSomaticSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "manta.outputVcfTumorSV": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_manta_normal_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/./calculate.sh",
+                "metrics_compare": "@CHECKOUT@/./compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/manta/output_metrics/normal.metrics",
+                "type": "script"
+            }
+        ]
+    }
+]
