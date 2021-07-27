@@ -69,28 +69,19 @@ Output | Type | Description
 `outputSvLocusGraphStats`|File|statistics and runtime information pertaining to the SV locus graph
 
 
-## Niassa + Cromwell
-
-This WDL workflow is wrapped in a Niassa workflow (https://github.com/oicr-gsi/pipedev/tree/master/pipedev-niassa-cromwell-workflow) so that it can used with the Niassa metadata tracking system (https://github.com/oicr-gsi/niassa).
-
-* Building
+## Commands
+ 
+This section lists command(s) run by manta workflow
+ 
+* Running manta
+ 
+Manta is a SV calling tool wrapped in a workflow which configures and then launches manta
+ 
 ```
-mvn clean install
-```
-
-* Testing
-```
-mvn clean verify \
--Djava_opts="-Xmx1g -XX:+UseG1GC -XX:+UseStringDeduplication" \
--DrunTestThreads=2 \
--DskipITs=false \
--DskipRunITs=false \
--DworkingDirectory=/path/to/tmp/ \
--DschedulingHost=niassa_oozie_host \
--DwebserviceUrl=http://niassa-url:8080 \
--DwebserviceUser=niassa_user \
--DwebservicePassword=niassa_user_password \
--Dcromwell-host=http://cromwell-url:8000
+  configManta.py BAM_FLAG NORMAL_BAM(s) TUMOR_BAM EXOME_FLAG RNA_FLAG UNSTRANDED_FLAG --referenceFasta REF_FASTA --runDir . ~{callRegionsCommand};
+     
+  python runWorkflow.py
+ 
 ```
 
 ## Support
