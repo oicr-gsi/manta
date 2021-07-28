@@ -71,20 +71,25 @@ Output | Type | Description
 
 ## Commands
  
-This section lists command(s) run by manta workflow
+ This section lists command(s) run by manta workflow
  
-* Running manta
+ * Running manta
  
-Manta is a SV calling tool wrapped in a workflow which configures and then launches manta
+ Manta is a SV calling tool wrapped in a workflow which configures and then launches manta
  
-```
-  configManta.py BAM_FLAG NORMAL_BAM(s) TUMOR_BAM EXOME_FLAG RNA_FLAG UNSTRANDED_FLAG --referenceFasta REF_FASTA --runDir . ~{callRegionsCommand};
+ ```
+    configManta.py BAM_FLAG NORMAL_BAM(s) 
+                   TUMOR_BAM
+                   EXOME_FLAG 
+                   RNA_FLAG
+                   UNSTRANDED_FLAG 
+                   --referenceFasta REF_FASTA 
+                   --runDir . CALL_REGIONS_COMMAND
      
-  python runWorkflow.py
+    python runWorkflow.py
  
-```
-
-## Support
+ ```
+ ## Support
 
 For support, please file an issue on the [Github project](https://github.com/oicr-gsi) or send an email to gsi@oicr.on.ca .
 
