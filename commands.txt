@@ -1,0 +1,20 @@
+## Commands
+
+This section lists command(s) run by manta workflow
+
+* Running manta
+
+Manta is a SV calling tool wrapped in a workflow which configures and then launches manta
+
+```
+   configManta.py BAM_FLAG NORMAL_BAM(s) 
+                  TUMOR_BAM
+                  EXOME_FLAG 
+                  RNA_FLAG
+                  UNSTRANDED_FLAG 
+                  --referenceFasta REF_FASTA 
+                  --runDir . CALL_REGIONS_COMMAND
+    
+   python runWorkflow.py
+
+```
