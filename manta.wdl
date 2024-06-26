@@ -61,21 +61,63 @@ workflow manta {
       }
     ]
     output_meta: {
-      outputVcfCandidateSV: "Unscored SV and indel candidates. Only a minimal amount of supporting evidence is required for an SV to be entered as a candidate in this file.",
-      outputTbiCandidateSV: "Index file for vcf",
-      outputVcfCandidateSmallIndels: "Subset of the candidateSV.vcf.gz file containing only simple insertion and deletion variants less than the minimum scored variant size (50 by default)",
-      outputTbiCandidateSmallIndels: "Index file for vcf",
-      outputVcfTumorSV: "If only tumor bam if specified. Subset of the candidateSV.vcf.gz file after removing redundant candidates and small indels less than the minimum scored variant size (50 by default)." ,
-      outputTbiTumorSV: "Index file for vcf",
-      outputVcfDiploidSV: "SVs and indels scored and genotyped under a diploid model for the set of samples in a joint diploid sample analysis or for the normal sample in a tumor/normal subtraction analysis. In the case of a tumor/normal subtraction, the scores in this file do not reflect any information from the tumor sample.",
-      outputTbiDiploidSV: "Index file for vcf",
-      outputVcfSomaticSV: "SVs and indels scored under a somatic variant model. This file will only be produced if a tumor sample alignment file is supplied during configuration",
-      outputTbiSomaticSV: "Index file for vcf",
-      outputAlignmentStatsSummary: "fragment length quantiles for each input alignment file",
-      outputSvCandidateGenerationStatsTSV: "statistics and runtime information pertaining to the SV candidate generation",
-      outputSvCandidateGenerationStatsXML: "xml data backing the svCandidateGenerationStats.tsv report",
-      outputSvLocusGraphStats: "statistics and runtime information pertaining to the SV locus graph"
+    outputVcfCandidateSV: {
+        description: "Unscored SV and indel candidates. Only a minimal amount of supporting evidence is required for an SV to be entered as a candidate in this file.",
+        vidarr_label: "outputVcfCandidateSV"
+    },
+    outputTbiCandidateSV: {
+        description: "Index file for vcf",
+        vidarr_label: "outputTbiCandidateSV"
+    },
+    outputVcfCandidateSmallIndels: {
+        description: "Subset of the candidateSV.vcf.gz file containing only simple insertion and deletion variants less than the minimum scored variant size (50 by default)",
+        vidarr_label: "outputVcfCandidateSmallIndels"
+    },
+    outputTbiCandidateSmallIndels: {
+        description: "Index file for vcf",
+        vidarr_label: "outputTbiCandidateSmallIndels"
+    },
+    outputVcfTumorSV: {
+        description: "If only tumor bam if specified. Subset of the candidateSV.vcf.gz file after removing redundant candidates and small indels less than the minimum scored variant size (50 by default).",
+        vidarr_label: "outputVcfTumorSV"
+    },
+    outputTbiTumorSV: {
+        description: "Index file for vcf",
+        vidarr_label: "outputTbiTumorSV"
+    },
+    outputVcfDiploidSV: {
+        description: "SVs and indels scored and genotyped under a diploid model for the set of samples in a joint diploid sample analysis or for the normal sample in a tumor/normal subtraction analysis. In the case of a tumor/normal subtraction, the scores in this file do not reflect any information from the tumor sample.",
+        vidarr_label: "outputVcfDiploidSV"
+    },
+    outputTbiDiploidSV: {
+        description: "Index file for vcf",
+        vidarr_label: "outputTbiDiploidSV"
+    },
+    outputVcfSomaticSV: {
+        description: "SVs and indels scored under a somatic variant model. This file will only be produced if a tumor sample alignment file is supplied during configuration",
+        vidarr_label: "outputVcfSomaticSV"
+    },
+    outputTbiSomaticSV: {
+        description: "Index file for vcf",
+        vidarr_label: "outputTbiSomaticSV"
+    },
+    outputAlignmentStatsSummary: {
+        description: "fragment length quantiles for each input alignment file",
+        vidarr_label: "outputAlignmentStatsSummary"
+    },
+    outputSvCandidateGenerationStatsTSV: {
+        description: "statistics and runtime information pertaining to the SV candidate generation",
+        vidarr_label: "outputSvCandidateGenerationStatsTSV"
+    },
+    outputSvCandidateGenerationStatsXML: {
+        description: "xml data backing the svCandidateGenerationStats.tsv report",
+        vidarr_label: "outputSvCandidateGenerationStatsXML"
+    },
+    outputSvLocusGraphStats: {
+        description: "statistics and runtime information pertaining to the SV locus graph",
+        vidarr_label: "outputSvLocusGraphStats"
     }
+}
   }
   output {
     File outputVcfCandidateSV = runManta.vcfCandidateSV
