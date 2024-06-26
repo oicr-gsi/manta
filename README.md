@@ -51,33 +51,33 @@ Parameter|Value|Default|Description
 
 ### Outputs
 
-Output | Type | Description
----|---|---
-`outputVcfCandidateSV`|File|Unscored SV and indel candidates. Only a minimal amount of supporting evidence is required for an SV to be entered as a candidate in this file.
-`ouputTbiCandidateSV`|File|Index file for vcf
-`outputVcfCandidateSmallIndels`|File|Subset of the candidateSV.vcf.gz file containing only simple insertion and deletion variants less than the minimum scored variant size (50 by default)
-`outputTbiCandidateSmallIndels`|File|Index file for vcf
-`outputVcfTumorSV`|File?|If only tumor bam if specified. Subset of the candidateSV.vcf.gz file after removing redundant candidates and small indels less than the minimum scored variant size (50 by default).
-`outputTbiTumorSV`|File?|Index file for vcf
-`outputVcfDiploidSV`|File?|SVs and indels scored and genotyped under a diploid model for the set of samples in a joint diploid sample analysis or for the normal sample in a tumor/normal subtraction analysis. In the case of a tumor/normal subtraction, the scores in this file do not reflect any information from the tumor sample.
-`outputTbiDiploidSV`|File?|Index file for vcf
-`outputVcfSomaticSV`|File?|SVs and indels scored under a somatic variant model. This file will only be produced if a tumor sample alignment file is supplied during configuration
-`outputTbiSomaticSV`|File?|Index file for vcf
-`outputAlignmentStatsSummary`|File|fragment length quantiles for each input alignment file
-`outputSvCandidateGenerationStatsTSV`|File|statistics and runtime information pertaining to the SV candidate generation
-`outputSvCandidateGenerationStatsXML`|File|xml data backing the svCandidateGenerationStats.tsv report
-`outputSvLocusGraphStats`|File|statistics and runtime information pertaining to the SV locus graph
+Output | Type | Description | Labels
+---|---|---|---
+`outputVcfCandidateSV`|File|Unscored SV and indel candidates. Only a minimal amount of supporting evidence is required for an SV to be entered as a candidate in this file.|vidarr_label: outputVcfCandidateSV
+`ouputTbiCandidateSV`|File|Index file for vcf|
+`outputVcfCandidateSmallIndels`|File|Subset of the candidateSV.vcf.gz file containing only simple insertion and deletion variants less than the minimum scored variant size (50 by default)|vidarr_label: outputVcfCandidateSmallIndels
+`outputTbiCandidateSmallIndels`|File|Index file for vcf|vidarr_label: outputTbiCandidateSmallIndels
+`outputVcfTumorSV`|File?|If only tumor bam if specified. Subset of the candidateSV.vcf.gz file after removing redundant candidates and small indels less than the minimum scored variant size (50 by default).|vidarr_label: outputVcfTumorSV
+`outputTbiTumorSV`|File?|Index file for vcf|vidarr_label: outputTbiTumorSV
+`outputVcfDiploidSV`|File?|SVs and indels scored and genotyped under a diploid model for the set of samples in a joint diploid sample analysis or for the normal sample in a tumor/normal subtraction analysis. In the case of a tumor/normal subtraction, the scores in this file do not reflect any information from the tumor sample.|vidarr_label: outputVcfDiploidSV
+`outputTbiDiploidSV`|File?|Index file for vcf|vidarr_label: outputTbiDiploidSV
+`outputVcfSomaticSV`|File?|SVs and indels scored under a somatic variant model. This file will only be produced if a tumor sample alignment file is supplied during configuration|vidarr_label: outputVcfSomaticSV
+`outputTbiSomaticSV`|File?|Index file for vcf|vidarr_label: outputTbiSomaticSV
+`outputAlignmentStatsSummary`|File|fragment length quantiles for each input alignment file|vidarr_label: outputAlignmentStatsSummary
+`outputSvCandidateGenerationStatsTSV`|File|statistics and runtime information pertaining to the SV candidate generation|vidarr_label: outputSvCandidateGenerationStatsTSV
+`outputSvCandidateGenerationStatsXML`|File|xml data backing the svCandidateGenerationStats.tsv report|vidarr_label: outputSvCandidateGenerationStatsXML
+`outputSvLocusGraphStats`|File|statistics and runtime information pertaining to the SV locus graph|vidarr_label: outputSvLocusGraphStats
 
 
 ## Commands
  
- This section lists command(s) run by manta workflow
+This section lists command(s) run by manta workflow
  
- * Running manta
+* Running manta
  
- Manta is a SV calling tool wrapped in a workflow which configures and then launches manta
+Manta is a SV calling tool wrapped in a workflow which configures and then launches manta
  
- ```
+```
     configManta.py BAM_FLAG NORMAL_BAM(s) 
                    TUMOR_BAM
                    EXOME_FLAG 
@@ -88,8 +88,8 @@ Output | Type | Description
      
     python runWorkflow.py
  
- ```
- ## Support
+```
+## Support
 
 For support, please file an issue on the [Github project](https://github.com/oicr-gsi) or send an email to gsi@oicr.on.ca .
 
