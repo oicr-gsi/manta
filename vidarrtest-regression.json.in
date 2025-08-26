@@ -39,7 +39,10 @@
             "manta.unstrandedRNA": false
         },
         "description": "Manta workflow test",
-        "engineArguments": {},
+        "engineArguments": {
+            "write_to_cache": false,
+            "read_from_cache": false
+        },
         "id": "tumor",
         "metadata": {
             "manta.ouputTbiCandidateSV": {
@@ -230,7 +233,10 @@
             "manta.unstrandedRNA": false
         },
         "description": "Manta workflow test",
-        "engineArguments": {},
+        "engineArguments": {
+            "write_to_cache": false,
+            "read_from_cache": false
+        },
         "id": "tumor-and-normal",
         "metadata": {
             "manta.ouputTbiCandidateSV": {
@@ -423,7 +429,10 @@
             "manta.unstrandedRNA": false
         },
         "description": "Manta workflow test",
-        "engineArguments": {},
+        "engineArguments": {
+            "write_to_cache": false,
+            "read_from_cache": false
+        },
         "id": "normal",
         "metadata": {
             "manta.ouputTbiCandidateSV": {
