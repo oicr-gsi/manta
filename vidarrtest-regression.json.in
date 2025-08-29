@@ -14,7 +14,7 @@
             "manta.runManta.timeout": null,
             "manta.tumorBai": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/SWID_278681_PCSI_0098_Pa_P_PE_700_WG_120905_h803_0093_AC12P2ACXX_NoIndex_L002_R1_001.chr22.bai",
+                    "configuration": "/.mounts/labs/gsi/testdata/manta/test_inputs/SWID_Test.chr22.bai",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -26,7 +26,7 @@
             },
             "manta.tumorBam": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/SWID_278681_PCSI_0098_Pa_P_PE_700_WG_120905_h803_0093_AC12P2ACXX_NoIndex_L002_R1_001.chr22.bam",
+                    "configuration": "/.mounts/labs/gsi/testdata/manta/test_inputs/SWID_Test.chr22.bam",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -39,7 +39,10 @@
             "manta.unstrandedRNA": false
         },
         "description": "Manta workflow test",
-        "engineArguments": {},
+        "engineArguments": {
+            "write_to_cache": false,
+            "read_from_cache": false
+        },
         "id": "tumor",
         "metadata": {
             "manta.ouputTbiCandidateSV": {
@@ -171,7 +174,7 @@
             "manta.normalBai": [
                 {
                     "contents": {
-                        "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/PCSI_0090_Ly_R_PE_598_WG_170201_D00355_0145_ACADTLANXX_GTAGAG_L008_001.annotated.chr22.bai",
+                        "configuration": "/.mounts/labs/gsi/testdata/manta/test_inputs/PCSI_Test02.annotated.chr22.bai",
                         "externalIds": [
                             {
                                 "id": "TEST",
@@ -185,7 +188,7 @@
             "manta.normalBam": [
                 {
                     "contents": {
-                        "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/PCSI_0090_Ly_R_PE_598_WG_170201_D00355_0145_ACADTLANXX_GTAGAG_L008_001.annotated.chr22.bam",
+                        "configuration": "/.mounts/labs/gsi/testdata/manta/test_inputs/PCSI_Test02.annotated.chr22.bam",
                         "externalIds": [
                             {
                                 "id": "TEST",
@@ -205,7 +208,7 @@
             "manta.runManta.timeout": null,
             "manta.tumorBai": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/PCSI_0090_Pa_P_PE_501_WG_526_170203_D00343_0160_ACACFLANXX_CCGTCC_L008_001.annotated.chr22.bai",
+                    "configuration": "/.mounts/labs/gsi/testdata/manta/test_inputs/PCSI_Test01.annotated.chr22.bai",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -217,7 +220,7 @@
             },
             "manta.tumorBam": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/PCSI_0090_Pa_P_PE_501_WG_526_170203_D00343_0160_ACACFLANXX_CCGTCC_L008_001.annotated.chr22.bam",
+                    "configuration": "/.mounts/labs/gsi/testdata/manta/test_inputs/PCSI_Test01.annotated.chr22.bam",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -230,7 +233,10 @@
             "manta.unstrandedRNA": false
         },
         "description": "Manta workflow test",
-        "engineArguments": {},
+        "engineArguments": {
+            "write_to_cache": false,
+            "read_from_cache": false
+        },
         "id": "tumor-and-normal",
         "metadata": {
             "manta.ouputTbiCandidateSV": {
@@ -362,7 +368,7 @@
             "manta.normalBai": [
                 {
                     "contents": {
-                        "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/SWID_278681_PCSI_0098_Pa_P_PE_700_WG_120905_h803_0093_AC12P2ACXX_NoIndex_L002_R1_001.chr22.bai",
+                        "configuration": "/.mounts/labs/gsi/testdata/manta/test_inputs/SWID_Test.chr22.bai",
                         "externalIds": [
                             {
                                 "id": "TEST",
@@ -374,7 +380,7 @@
                 },
                 {
                     "contents": {
-                        "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/PCSI_0090_Ly_R_PE_598_WG_170201_D00355_0145_ACADTLANXX_GTAGAG_L008_001.annotated.chr22.bai",
+                        "configuration": "/.mounts/labs/gsi/testdata/manta/test_inputs/PCSI_Test02.annotated.chr22.bai",
                         "externalIds": [
                             {
                                 "id": "TEST",
@@ -388,7 +394,7 @@
             "manta.normalBam": [
                 {
                     "contents": {
-                        "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/SWID_278681_PCSI_0098_Pa_P_PE_700_WG_120905_h803_0093_AC12P2ACXX_NoIndex_L002_R1_001.chr22.bam",
+                        "configuration": "/.mounts/labs/gsi/testdata/manta/test_inputs/SWID_Test.chr22.bam",
                         "externalIds": [
                             {
                                 "id": "TEST",
@@ -400,7 +406,7 @@
                 },
                 {
                     "contents": {
-                        "configuration": "/.mounts/labs/gsi/testdata/manta/input_data/PCSI_0090_Ly_R_PE_598_WG_170201_D00355_0145_ACADTLANXX_GTAGAG_L008_001.annotated.chr22.bam",
+                        "configuration": "/.mounts/labs/gsi/testdata/manta/test_inputs/PCSI_Test02.annotated.chr22.bam",
                         "externalIds": [
                             {
                                 "id": "TEST",
@@ -423,7 +429,10 @@
             "manta.unstrandedRNA": false
         },
         "description": "Manta workflow test",
-        "engineArguments": {},
+        "engineArguments": {
+            "write_to_cache": false,
+            "read_from_cache": false
+        },
         "id": "normal",
         "metadata": {
             "manta.ouputTbiCandidateSV": {
